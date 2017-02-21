@@ -33,7 +33,7 @@ function renderResults(text) {
     $('.js-averageLength').text(averageWordLength);
 }
 
-
+//when submit button is clicked
 function analyzeForm () {
  $('button').click(function(){
     var words = $('textarea').val();
@@ -44,7 +44,6 @@ function analyzeForm () {
 }
 
 
-$(function() {
-analyzeForm();
-
+$(function(){
+    analyzeForm();
 });
