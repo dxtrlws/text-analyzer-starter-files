@@ -1,22 +1,35 @@
 // your code here!
-function totalWords (words) {
-    return words.split(' ').length;
-}
-
-function averageLength (words) {
+function wordCount(text) {
+    return text.split(" ").length;
 
 }
 
-function renderResults(words) {
+function averageLength (text) {
+    var totalLength = text.join(" ").length;
+    return totalLength / text.length;
+}
 
+function uniqueWords(text) {
+    
+}
+
+
+function renderResults(text) {
+    var totalWordLength = wordCount(text);
+    var distictWords = uniqueWords(text);
+    var avgLenth = averageLength(text);
+
+    $('.js-wordCount').text(totalWordLength);
+    $('.js-uniqueWords').text(distictWords);
+    $('.js-averageLength').text(avgLenth);
 }
 
 
 function analyzeForm () {
  $('button').click(function(){
     var words = $('textarea').val();
-    $('.text-report').removeClass('hidden');
-    superCounter(words);
+     $('.text-report').removeClass('hidden');
+    renderResults(words);
  });
 
 }
